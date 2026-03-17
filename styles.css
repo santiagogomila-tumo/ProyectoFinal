@@ -1,0 +1,454 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+/* Estilos generales */
+* {
+  font-family: "Bebas Neue", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1, h2 {
+  text-align: center;
+  color: black;
+  margin-top: 10px;
+}
+
+h5 {
+  color: #333;
+}
+
+span {
+  color: white;
+}
+
+/* Header y Navbar */
+header {
+  background-color: black;
+}
+
+.nav-bar .navbar-nav .nav-item {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.nav-bar .navbar-nav .nav-item .nav-link {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+.nav-bar .navbar-nav .nav-item .nav-link:hover {
+  color: rgb(247, 255, 136);
+}
+
+.logo_navbar {
+  max-width: 50px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.logo_navbar:hover {
+  transform: scale(1.1); /* Corregido: scale(1, 0) desaparecería el elemento */
+}
+
+.fondo-toggler {
+  background-color: white;
+  color: white;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: black;
+  color: white;
+  margin-top: auto;
+}
+
+/* Carrusel de inicio */
+.carrousell_inicio {
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+
+.carrousell_inicio img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.carousel-item {
+  position: relative;
+  display: none;
+  float: left;
+  width: 100%;
+  margin-right: -100%;
+  backface-visibility: hidden;
+}
+
+/* Destacados */
+.container_destacados {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.container_destacados img {
+  width: 80%;
+  margin-bottom: 10px;
+  margin-left: 25px;
+  border-radius: 3px;
+}
+
+.container_destacados img:hover {
+  transform: scale(1.1);
+}
+
+/* Formulario e Información de Contacto */
+#contact-form {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 50%;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.contact_form {
+  text-align: center;
+}
+
+.contact_form button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 10px;
+  margin: auto;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.contact_form button:hover {
+  background-color: rgb(247, 255, 136);
+}
+
+#contact-info {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.informacion, p {
+  text-align: center;
+}
+
+/* Sección de Envío */
+.envio {
+  text-align: center;
+  background: linear-gradient(to right, #000, #333);
+  border-radius: 5px;
+  margin-bottom: 50px;
+  margin: 10px;
+}
+
+.envio h3 {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.envio p {
+  text-align: center;
+  color: white;
+}
+
+.envio iframe {
+  width: 100%;
+  max-width: 200px;
+  height: 200px;
+  border: 0;
+  margin: 0 auto;
+  margin-bottom: 45px;
+}
+
+.envio button {
+  background-color: #fff;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.envio button:hover {
+  background-color: rgb(247, 255, 136);
+}
+
+/* Cuadro de Información (Nosotros) */
+.cuadro {
+  padding: 5%;
+  border: 1px solid #333;
+  border-radius: 5px;
+  margin: 20px;
+  color: #fff;
+}
+
+.cuadro .info .nuestra_marca,
+.cuadro .info .sobre_nosotros,
+.cuadro .info .nuestra_vision,
+.cuadro .info .nuestro_compromiso {
+  border: 1px solid black;
+}
+
+.cuadro p {
+  color: black;
+  margin-top: 10px;
+}
+
+/* ESTILOS DE CATÁLOGOS (Pantalones, Buzos, Remeras) */
+/* Clases base compartidas (el mixin catalogo-styles resuelto) */
+.catalogo_pantalones .space, .catalogo_pantalones .airy, .catalogo_pantalones .ample, 
+.catalogo_pantalones .open, .catalogo_pantalones .expansive, .catalogo_pantalones .capacious,
+.catalogo_buzos .peace, .catalogo_buzos .fear, .catalogo_buzos .knok, 
+.catalogo_buzos .orange, .catalogo_buzos .green, .catalogo_buzos .dreamers,
+.catalogo_remeras .mushroom, .catalogo_remeras .courage, .catalogo_remeras .nasa, 
+.catalogo_remeras .good-vibes, .catalogo_remeras .thug, .catalogo_remeras .panther {
+  background-color: #333;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  width: 300px;
+  height: 330px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Títulos de los catálogos */
+.catalogo_pantalones h2, 
+.catalogo_buzos h2, 
+.catalogo_buzos button h2 {
+  color: white;
+}
+
+/* Imágenes de los catálogos */
+.catalogo_pantalones img,
+.catalogo_buzos img,
+.catalogo_remeras img {
+  height: 200px;
+  width: 200px;
+  border-radius: 10px;
+}
+
+.catalogo_buzos img {
+  margin-left: 5px;
+}
+
+/* Botones de catálogos (el mixin boton-catalogo resuelto) */
+.catalogo_pantalones button,
+.catalogo_buzos button,
+.catalogo_remeras button {
+  background-color: #fff;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.catalogo_pantalones button:hover,
+.catalogo_buzos button:hover,
+.catalogo_remeras button:hover {
+  background-color: rgb(247, 255, 136);
+}
+
+/* MEDIA QUERIES RESPONSIVE */
+
+@media (max-width: 1199px) {
+  .container_destacados img {
+    width: 97%;
+    padding: 5px;
+  }
+  .container_destacados img:active {
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 992px) {
+  .container_destacados img {
+    width: 80%;
+    padding: 5px;
+  }
+  .container_destacados img:active {
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-list {
+    list-style: none;
+    margin-left: 1px;
+    padding: 0;
+    display: flex;
+  }
+  
+  .nav-list li {
+    margin-left: 8px;
+  }
+  
+  .nav-list a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .nav-list a:hover {
+    color: rgb(247, 255, 136);
+  }
+  
+  .carrousel_inicio {
+    width: 60%;
+  }
+
+  .container_destacados img {
+    width: 80%;
+    padding: 5px;
+  }
+
+  .catalogo_remeras, .catalogo_buzos {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    right: 1px;
+    padding: 0;
+  }
+
+  .catalogo_remeras > div {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+    margin-left: 5px;
+  }
+
+  .catalogo_buzos > div {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    margin-left: 18px;
+    width: 300px;
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .catalogo_pantalones > div {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 1px;
+    margin-left: 18px;
+  }
+}
+
+@media (max-width: 471px) {
+  .carrousel_inicio, .destacados_title {
+    display: none;
+  }
+
+  .container_destacados {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    right: 10px;
+  }
+
+  .catalogo_buzos, .catalogo_remeras {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    right: 30px;
+  }
+
+  .catalogo_pantalones {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    right: 2px;
+  }
+}
