@@ -32,10 +32,11 @@ for (let i = 0; i < mostrar.length; i++) {
     }, 2000)
   })
 }
-
-ocultar.addEventListener('click', () => {
-    popup.classList.remove('active')
-})
+if(ocultar != null){
+  ocultar.addEventListener('click', () => {
+      popup.classList.remove('active')
+  })
+}
 
 
  /********* Modal para el formulario de contacto *********/
@@ -46,7 +47,7 @@ document.querySelector('#contacto_form').addEventListener('submit', function(eve
     <div id="contacto-modal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-          <div class="modal-body contacto_info text- center">
+          <div class="modal-body contacto_info text-center">
             <h2>Tu consulta ha sido enviada<br></h2>
             <p>En breve uno de nuestros coaches<br>te va a contactar.</p>
           </div>
