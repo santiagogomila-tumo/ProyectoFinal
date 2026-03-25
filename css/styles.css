@@ -393,6 +393,24 @@ footer {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
+
+.popup-container {
+    position: fixed;
+    right: -250px;
+    bottom: 50%;
+    transform: translateX(50%);
+    background: white;
+    color: #ff6a3d;
+    padding: 20px;
+    transition: right 0.5s ease-in-out;
+    z-index: 1000;
+    border: #ccc solid 1px;
+    border-radius: 10px;
+}
+
+.popup-container.active {
+    right: 100px;
+}
 /* =========================
    RESPONSIVE
 ========================= */
@@ -583,7 +601,7 @@ footer {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .nav-list {
     list-style: none;
     margin-left: 1px;
@@ -652,6 +670,10 @@ footer {
     margin: 1px;
     margin-left: 18px;
   }
+
+  .merch_grid {
+    grid-template-columns: repeat(2, 1fr); /* 🔥 2 por fila */
+  }
 }
 
 @media (max-width: 471px) {
@@ -684,5 +706,9 @@ footer {
     justify-content: center;
     position: relative;
     right: 2px;
+  }
+
+  .merch_grid {
+    grid-template-columns: repeat(1, 1fr); /* 🔥 1 por fila */
   }
 }
